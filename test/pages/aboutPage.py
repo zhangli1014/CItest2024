@@ -1,8 +1,8 @@
 # -*-coding:utf-8-*-
-
 from selenium.webdriver.common.by import By
+import sys
+sys.path.append('../../../../')
 from test.pages.loginPage import LoginPage
-
 
 class AboutPage(LoginPage):
     """关于我们页面"""

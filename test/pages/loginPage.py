@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
-
-import os
+import os,time,sys
 from selenium.webdriver.common.by import By
+sys.path.append('../../../../')
 from test.pages.basePage import BasePage
 from utils.ReadConfig import ReadConfig
 
@@ -39,8 +39,10 @@ class LoginPage(BasePage):
 
         if email is None:
             email = account_email
+        '''
         else:
             email = email
+        '''
 
         if password is None:
             password = account_password
@@ -61,4 +63,5 @@ class LoginPage(BasePage):
 if __name__ == '__main__':
     a = LoginPage()
     a.login()
+    time.sleep(3)
     # a.quit_driver()

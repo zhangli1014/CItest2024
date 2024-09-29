@@ -1,12 +1,11 @@
 # -*-coding:utf-8-*-
-
-import unittest
+import unittest,sys
+sys.path.append('../../../../')
 from test.pages.homePage import HomePage
 
 
 class TestHome(unittest.TestCase):
     """测试主页功能"""
-
     @classmethod
     def setUpClass(cls):
         cls.home = HomePage()

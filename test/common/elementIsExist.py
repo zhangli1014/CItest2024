@@ -1,5 +1,6 @@
 # -*-coding:utf-8-*-
-
+from selenium.webdriver.common.by import By
+from selenium import webdriver
 
 class ElementIsExist(object):
     def __init__(self, driver):
@@ -8,7 +9,7 @@ class ElementIsExist(object):
     def is_exist(self, element):
         flag = True
         try:
-            self.driver.find_element_by_css_selector(element)
+            self.driver.find_element(By.CSS_SELECTOR,element)
             return flag
         except:
             flag = False

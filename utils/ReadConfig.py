@@ -19,5 +19,6 @@ class ReadConfig(object):
 
 if __name__ == '__main__':
     data = ReadConfig().read_json("../config/base_data.json")
+    print(type(data))
     print(data)
     print(data['base_url'], data['email'], data['password'])

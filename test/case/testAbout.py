@@ -1,6 +1,7 @@
 # -*-coding:utf-8-*-
 
-import unittest
+import unittest,sys
+sys.path.append('../../../../')
 from test.pages.aboutPage import AboutPage
 
 

@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
-
-import os, time
+import os, time,sys
 import unittest
+sys.path.append('../../../../')
 from utils.HTMLTestRunner import HTMLTestRunner
 
 class Main:
