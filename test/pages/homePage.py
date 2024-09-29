@@ -1,10 +1,9 @@
 # -*-coding:utf-8-*-
-import time,sys
-sys.path.append('../../../../')
-from selenium import webdriver
+
 from selenium.webdriver.common.by import By
-from projectTest.chapter9.test.pages.loginPage import LoginPage
-from projectTest.chapter9.test.common.tableOperation import TableOperation
+from test.pages.loginPage import LoginPage
+from test.common.tableOperation import TableOperation
+
 
 class HomePage(LoginPage):
     """主页页面"""
@@ -12,16 +11,20 @@ class HomePage(LoginPage):
     def search_input_element(self):
         """检索输入框"""
         return self.find_element(By.ID, "search-input")
+
     def search_button_element(self):
         """检索按钮"""
         return self.find_element(By.CLASS_NAME, "search")
+
     # 按钮
     def add_button_element(self):
         """新增按钮"""
         return self.find_element(By.ID, "add")
+
     def edit_button_element(self):
         """编辑按钮"""
         return self.find_element(By.ID, "edt")
+
     def delete_button_element(self):
         """删除按钮"""
         return self.find_element(By.ID, "del")
@@ -30,28 +33,34 @@ class HomePage(LoginPage):
     def edit_code_element(self):
         """学号输入框"""
         return self.find_element(By.CSS_SELECTOR, "#add-dialog .code")
+
     def edit_name_element(self):
         """姓名输入框"""
         return self.find_element(By.CSS_SELECTOR, "#add-dialog .name")
+
     def edit_sex_element(self):
         """性别输入框"""
         return self.find_element(By.CSS_SELECTOR, "#add-dialog .sex")
+
     def edit_grader_element(self):
         """年级输入框"""
         return self.find_element(By.CSS_SELECTOR, "#add-dialog .grader")
+
     def edit_confirm_button_element(self):
         """编辑确定按钮"""
         return self.find_element(By.CSS_SELECTOR, "#add-dialog #confirm")
+
     def edit_cancel_button_element(self):
         """编辑取消按钮"""
         return self.find_element(By.CSS_SELECTOR, "#add-dialog #cancel")
 
     # 删除弹窗
     def del_confirm_button_element(self):
-        """删除确定按钮"""
+        """编辑确定按钮"""
         return self.find_element(By.CSS_SELECTOR, "#del-dialog #confirm")
+
     def del_cancel_button_element(self):
-        """删除取消按钮"""
+        """编辑取消按钮"""
         return self.find_element(By.CSS_SELECTOR, "#del-dialog #cancel")
 
 
@@ -86,6 +95,7 @@ class HomePage(LoginPage):
             self.edit_cancel_button_element().click()
         else:
             print("编辑弹窗中按钮只能是确定和取消")
+
     def add_data(self, code, name, sex=None, grader=None, button="确定"):
         """
         由于code、name为必输项所以一定要接受参数
@@ -99,6 +109,7 @@ class HomePage(LoginPage):
         """
         self.add_button_element().click()
         self.edit_dialog(code, name, sex, grader, button)
+
     def edit_data(self, header_text, row_text, code=None, name=None, sex=None, grader=None, button="确定"):
         """编辑数据"""
         # 使用row_click()方法是为了直接选择要编辑的数据
@@ -120,6 +131,7 @@ class HomePage(LoginPage):
 
 
 if __name__ == '__main__':
+    from selenium import webdriver
     driver = webdriver.Chrome()
     a = LoginPage(driver)
     a.login()
@@ -129,6 +141,6 @@ if __name__ == '__main__':
     home.edit_data('姓 名', "张三", name="李四")
     home.search("李四")
     home.delete_data('姓 名', "李四")
-    time.sleep(3)
+
 
     # a.quit_driver()

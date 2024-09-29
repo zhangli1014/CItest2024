@@ -1,8 +1,10 @@
 # -*-coding:utf-8-*-
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 import os
+
 
 class BasePage(object):
     """基础页面"""
@@ -20,7 +22,7 @@ class BasePage(object):
             self.driver = driver
 
         if base_url is None:
-            self.base_url = 'http://localhost:8081/#/'
+            self.base_url = 'http://localhost:17088/#/'
         else:
             self.base_url = base_url
         # 设置默认打开的页面
@@ -49,12 +51,13 @@ class BasePage(object):
     def find_elements(self, by, element):
         """返回一组定位元素"""
         sleep(1)
-        return self.driver.find_elements(by, element)#list
+        return self.driver.find_elements(by, element)
 
     def switch_alert(self):
         """返回一组定位元素"""
         sleep(1)
         return self.driver.switch_to.alert
+
 
     def select_menu(self, menu_text):
         """菜单选择"""

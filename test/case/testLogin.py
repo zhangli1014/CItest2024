@@ -1,10 +1,12 @@
 # -*-coding:utf-8-*-
-import unittest,sys
-sys.path.append('../../../../')
-from projectTest.chapter9.test.pages.loginPage import LoginPage
+
+import unittest
+from test.pages.loginPage import LoginPage
+
 
 class TestLogin(unittest.TestCase):
     """登录测试"""
+
     '''
     将启动浏览器和关闭浏览器的操作分别放在测试的预置条件
     setUpClass和测试销毁tearDownClass中，进行测试登录的操作方法设置为test

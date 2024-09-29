@@ -1,8 +1,9 @@
 # -*-coding:utf-8-*-
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
-from selenium import webdriver
+
 
 class PagingOperation(object):
     """Tab操作"""
@@ -44,7 +45,7 @@ class PagingOperation(object):
 
 
 if __name__ == '__main__':
-
+    from selenium import webdriver
     driver = webdriver.Chrome()
     driver.maximize_window()
     #driver.get('http://localhost:63342/projectAutoTest/projectHtml/chapter7/period4-6/index.html')
@@ -56,5 +57,4 @@ if __name__ == '__main__':
     paging.paging_operation("下一页")
     paging.paging_operation("首页")
     paging.paging_operation("未页")
-    sleep(3)
-    driver.quit()
+    #driver.quit()

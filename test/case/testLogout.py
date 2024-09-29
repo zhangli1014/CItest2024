@@ -1,8 +1,7 @@
 # -*-coding:utf-8-*-
 
-import unittest,sys
-sys.path.append('../../../../')
-from projectTest.chapter9.test.pages.loginPage import LoginPage
+import unittest
+from test.pages.loginPage import LoginPage
 
 
 class TestLogout(unittest.TestCase):
