@@ -78,7 +78,7 @@ if __name__ == '__main__':
     #driver = webdriver.Chrome('/Users/ydj/Desktop/ydj/projectAutoTest/chromedriver')
     driver = webdriver.Chrome()
     driver.maximize_window()
-    driver.get('http://localhost:30619/#/')
+    driver.get('http://localhost:8081/#/')
     sleep(1)
     driver.find_element(By.CLASS_NAME, "email").send_keys('admin@tynam.com')
     driver.find_element(By.CLASS_NAME, "password").send_keys('tynam123')

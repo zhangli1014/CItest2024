@@ -22,7 +22,7 @@ class BasePage(object):
             self.driver = driver
 
         if base_url is None:
-            self.base_url = 'http://localhost:17088/#/'
+            self.base_url = 'http://localhost:8081/#/'
         else:
             self.base_url = base_url
         # 设置默认打开的页面

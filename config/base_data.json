@@ -1,5 +1,5 @@
 {
-  "base_url": "http://localhost:17088",
+  "base_url": "http://localhost:8081",
   "email": "admin@tynam.com",
   "password": "tynam123"
 }
